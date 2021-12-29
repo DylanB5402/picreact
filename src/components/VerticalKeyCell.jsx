@@ -4,7 +4,7 @@ class VerticalKeyCell extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {labels : [1, 2, 3]}
+        this.state = {labels : []}
     }
     
     render() {
@@ -18,7 +18,7 @@ class VerticalKeyCell extends React.Component {
             )
         })
         return(
-            <td>
+            <td class="cell">
                 {label_components}
             </td>
         )

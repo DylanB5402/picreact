@@ -1,30 +1,24 @@
 import React from "react";
 import './Board.css'
-
+import CellStatus from "../CellStatus";
 class BoardCell extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            row : this.props.row,
+            col : this.props.col,
+            cellStatus : CellStatus.UNKNOWN
+        }
     }
 
-    handleClick = (e) => {
-        e.preventDefault();
-        console.log(e);
-    }
     
     render() {
         return(
-            <td class="cell" onClick={this.handleClick} onContextMenu={this.handleClick}></td>
+            <td class="cell" onClick={this.props.onClick} onContextMenu={this.handleClick}></td>
         )
     }
 }
 
-const CellStatus = {
-    UNKNOWN : 0,
-    FILLED : 1,
-    BLANK : 2,
-    FILLED_X : 3,
-    BLANK_X : 4
-}
 
 export default BoardCell;
