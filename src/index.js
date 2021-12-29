@@ -4,7 +4,7 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App cheese = "hello world"/>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );

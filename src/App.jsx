@@ -2,9 +2,9 @@ import Board from "./components/Board";
 
 function App(props) {
   return (
-    <div>
+    <section>
       <Board></Board>
-    </div>
+    </section>
   );
 }
 

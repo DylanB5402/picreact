@@ -1,0 +1,12 @@
+.cell {
+    border: 1px solid black;
+    padding: 0%;
+    width: auto;
+}
+
+#board {
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border-collapse: collapse;
+}
