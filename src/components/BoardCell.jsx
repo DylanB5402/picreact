@@ -8,14 +8,19 @@ class BoardCell extends React.Component {
         this.state = {
             row : this.props.row,
             col : this.props.col,
-            cellStatus : CellStatus.UNKNOWN
+            cellStatus : this.props.cellStatus
         }
     }
 
-    
+    handleClick = (e) => {
+        e.preventDefault();
+        this.props.updateStatus(this.state.row, this.state.col, this.state.cellStatus);
+        // console.log(e);
+    }
+
     render() {
         return(
-            <td class="cell" onClick={this.props.onClick} onContextMenu={this.handleClick}></td>
+            <td className="cell" onClick={this.handleClick} onContextMenu={this.handleClick}></td>
         )
     }
 }

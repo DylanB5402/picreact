@@ -5,13 +5,14 @@ class BoardCellRow extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {row_length : 5};
+        this.state = {rowLength : this.props.rowLength};
     }
     
     render() {
         var cells = [];
-        for (var i = 0; i < this.state.row_length; i++) {
-            cells.push(<BoardCell></BoardCell>)
+        for (var i = 0; i < this.state.rowLength; i++) {
+            var cell = <BoardCell row = {this.props.rowNumber} col = {i} onclick={this.handleClick} updateStatues={this.updateCellStatus} cellStatus={this.props.cellStatuses[i]} key={i} updateStatus={this.props.cellUpdateFunction}></BoardCell>
+            cells.push(cell);
         }
         return(
             <tr>
