@@ -15,12 +15,11 @@ class Board extends React.Component {
                 this.state.cellStatuses[i].push(CellStatus.BLANK);
             }
         }
-        // this.updateCellStatus = this.updateCellStatus.bind(this);
     }
 
     updateCellStatus = (row, col, status) => {
         var statuses = this.state.cellStatuses;
-        console.log(row, col)
+        // console.log(row, col)
         statuses[row][col] = status;
         this.setState({
             height : this.state.height,
@@ -38,9 +37,7 @@ class Board extends React.Component {
         for (var i = 0; i < this.state.width; i++) { 
             cell_rows.push(<BoardCellRow key = {i} rowNumber = {i} cellStatuses={this.state.cellStatuses[i]} rowLength = {this.state.cellStatuses.length} cellUpdateFunction={this.updateCellStatus.bind(this)} ></BoardCellRow>);
         }
-        // console.log(this.state.cellStatuses)
         return (
-            
             <table id="board">
                 <tbody>
                     {cell_rows}

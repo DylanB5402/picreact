@@ -4,9 +4,30 @@
     width: auto;
 }
 
+.cellXDiv {
+    margin: auto;
+    text-align: center;
+}
+
+.cellX {
+    font-size: xx-large;
+}
+
 #board {
     margin: auto;
     width: 600px;
     height: 600px;
     border-collapse: collapse;
+}
+
+.cellUnknown {
+    background-color: aliceblue;
+}
+
+.cellBlank {
+    background-color: gray;
+}
+
+.cellFilled {
+    background-color: greenyellow;
 }
