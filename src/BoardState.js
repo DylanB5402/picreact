@@ -1,4 +1,4 @@
-import CellStatus from '../CellStatus';
+import CellStatus from './CellStatus';
 
 class BoardState {
   constructor (rows, cols) {
@@ -18,4 +18,10 @@ class BoardState {
   setState (row, col, newState) {
     this.state[row][col] = newState;
   }
+
+  getRow(row) {
+    return this.state[row];
+  }
 }
+
+export default BoardState;
