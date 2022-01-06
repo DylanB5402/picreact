@@ -1,16 +1,15 @@
-import React from "react";
+import React from 'react';
 
 class HorizontalKeyCell extends React.Component {
+  constructor (props) {
+    super(props);
+  }
 
-    constructor(props) {
-        super(props);
-    }
-    
-    render() {
-        return(
-            <td></td>
-        )
-    }
+  render () {
+    return (
+      <td />
+    );
+  }
 }
 
 export default HorizontalKeyCell;

@@ -1,16 +1,15 @@
-import React from "react";
+import React from 'react';
 
 class Template extends React.Component {
+  constructor (props) {
+    super(props);
+  }
 
-    constructor(props) {
-        super(props);
-    }
-    
-    render() {
-        return(
-            <p>1</p>
-        )
-    }
+  render () {
+    return (
+      <p>1</p>
+    );
+  }
 }
 
 export default Template;

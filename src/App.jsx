@@ -1,9 +1,9 @@
-import Board from "./components/Board";
+import Board from './components/Board';
 
-function App(props) {
+function App (props) {
   return (
     <section>
-      <Board></Board>
+      <Board />
     </section>
   );
 }
