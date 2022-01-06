@@ -19,18 +19,17 @@ class Board extends React.Component {
     }
 
     updateCellStatus = (row, col, status) => {
-        var statuses = this.state.cellStatuses[0];
-        // statuses[0][row][col] = status;
-        statuses.setState(row, col, status)
+        var statuses = this.state.cellStatuses;
+        statuses[0].setState(row, col, status)
         this.setState({
             rows : this.state.rows,
             cols : this.state.cols,
             cellStatuses : statuses
         })
+        // console.log(this.state.cellStatuses)
     }
 
     render() {
-        console.log(this.state.cellStatuses)
         var vertical_keys = [];
         for (var i = 0; i < this.state.cols; i ++) {
             vertical_keys.push(<VerticalKeyCell></VerticalKeyCell>);
