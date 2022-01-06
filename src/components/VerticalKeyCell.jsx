@@ -7,9 +7,9 @@ class VerticalKeyCell extends React.Component {
   }
 
   render () {
-    const label_components = [];
+    const labelComponents = [];
     this.state.labels.forEach((label) => {
-      label_components.push(
+      labelComponents.push(
         <div>
           <p>{label}</p>
           <br />
@@ -18,7 +18,7 @@ class VerticalKeyCell extends React.Component {
     });
     return (
       <td class='cell'>
-        {label_components}
+        {labelComponents}
       </td>
     );
   }
