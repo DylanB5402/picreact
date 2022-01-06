@@ -30,8 +30,8 @@ class BoardCell extends React.Component {
             col : this.state.col,
             cellStatus : newStatus
         })
-        console.log(this.state.cellStatus)
-        console.log(newStatus)
+        // console.log(this.state.cellStatus)
+        // console.log(newStatus)
     }
 
     render() {
