@@ -24,4 +24,11 @@ class BoardState {
   }
 }
 
-export default BoardState;
+function generateRandomBoardState() {
+  
+}
+
+// export default BoardState;
+export default {
+  BoardState, generateRandomBoardState
+}

@@ -26,7 +26,6 @@ class Board extends React.Component {
             cols : this.state.cols,
             cellStatuses : statuses
         })
-        // console.log(this.state.cellStatuses)
     }
 
     render() {
