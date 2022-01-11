@@ -12,7 +12,8 @@ class Board extends React.Component {
         super(props);
         this.boardGen = new BoardGenerator();
         // this.state = {rows : this.props.rows, cols : this.props.cols, cellStatuses : [new BoardState(this.props.rows, this.props.cols)]}
-        this.state = {rows : this.props.rows, cols : this.props.cols, cellStatuses : [this.boardGen.generateBoard(this.props.rows, this.props.cols)]}
+        var actualBoardLayout = this.boardGen.generateBoard(this.props.rows, this.props.cols);
+        this.state = {rows : this.props.rows, cols : this.props.cols, cellStatuses : [actualBoardLayout], renderedCellStatuses : [actualBoardLayout]}
         
     }
 
@@ -34,7 +35,7 @@ class Board extends React.Component {
         }
         var cell_rows = [];
         for (var i = 0; i < this.state.rows; i++) { 
-            cell_rows.push(<BoardCellRow key = {i} rowNumber = {i} cellStatuses={this.state.cellStatuses[0].getRow(i)} rowLength = {this.state.cols} cellUpdateFunction={this.updateCellStatus.bind(this)} ></BoardCellRow>);
+            cell_rows.push(<BoardCellRow key = {i} rowNumber = {i} cellStatuses={this.state.cellStatuses[0].getRow(i)} rowLength = {this.state.cols} cellUpdateFunction={this.updateCellStatus.bind(this)} showTrueState={false} ></BoardCellRow>);
         }
         return (
             <table id="board">

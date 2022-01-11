@@ -10,7 +10,7 @@ class BoardCellRow extends React.Component {
   render () {
     const cells = [];
     for (let i = 0; i < this.state.rowLength; i++) {
-      const cell = <BoardCell row={this.props.rowNumber} col={i} cellStatus={this.props.cellStatuses[i]} key={i} updateStatus={this.props.cellUpdateFunction} />;
+      const cell = <BoardCell row={this.props.rowNumber} col={i} cellStatus={this.props.cellStatuses[i]} key={i} updateStatus={this.props.cellUpdateFunction} showTrueState={this.props.showTrueState}/>;
       cells.push(cell);
     }
     return (
