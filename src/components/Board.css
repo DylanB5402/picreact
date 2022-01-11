@@ -2,16 +2,24 @@
     border: 1px solid black;
     padding: 0%;
     width: auto;
+    white-space: nowrap;
+    max-width: auto;
+    
 }
 
-.cellXDiv {
+/* .cellXDiv {
     margin: auto;
     text-align: center;
 }
 
 .cellX {
-    font-size: xx-large;
+    font-size: small;
+    text-align: center;
 }
+
+.cellXInvisible {
+    display: none;
+} */
 
 #board {
     margin: auto;
@@ -30,4 +38,13 @@
 
 .cellFilled {
     background-color: greenyellow;
+}
+
+.cellWrong {
+    border-color: red;
+    /* border-width: 3px; */
+}
+
+table {
+    table-layout: fixed;
 }

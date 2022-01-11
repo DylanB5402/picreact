@@ -16,15 +16,29 @@ class BoardCell extends React.Component {
     handleClick = (e) => {
         e.preventDefault();
         if (e.button === 0) {
-            this.updateCellStatus(CellStatus.FILLED);
+            // this.updateCellStatus(CellStatus.FILLED);
+            this.onLeftClick();
         } else if (e.button === 2) {
-            this.updateCellStatus(CellStatus.BLANK);
+            // this.updateCellStatus(CellStatus.BLANK);
+            this.onRightClick();
         }
         this.props.updateStatus(this.state.row, this.state.col, this.state.renderedCellStatus);
     }
 
     onLeftClick() {
+        if (this.state.trueCellStatus != CellStatus.FILLED) {
+            this.updateCellStatus(CellStatus.FILLED_X);
+        } else {
+            this.updateCellStatus(CellStatus.FILLED);
+        }
+    }
 
+    onRightClick() {
+        if (this.state.trueCellStatus != CellStatus.BLANK) {
+            this.updateCellStatus(CellStatus.BLANK_X);
+        } else {
+            this.updateCellStatus(CellStatus.BLANK);
+        }
     }
 
     updateCellStatus(newStatus) {
@@ -40,18 +54,18 @@ class BoardCell extends React.Component {
         var cellStateClass;
         if (status === CellStatus.UNKNOWN) {
             cellStateClass = "cellUnknown";
-        } else if (status === CellStatus.BLANK) {
+        } else if (status === CellStatus.BLANK || status === CellStatus.BLANK_X) {
             cellStateClass = "cellBlank";
-        } else if (status === CellStatus.FILLED) {
+        } else if (status === CellStatus.FILLED || status === CellStatus.FILLED_X) {
             cellStateClass = "cellFilled";
         }
         return cellStateClass;
     }
 
     render() {
-        var xDiv;
+        var xClass = "";
         if (this.state.renderedCellStatus === CellStatus.BLANK_X || this.state.renderedCellStatus === CellStatus.FILLED_X) {
-            xDiv = <div className="cellXDiv"><h1 className="cellX">X</h1></div>
+            xClass = "cellWrong"
         }
         var cellStateClass;
         if (this.props.showTrueState) {
@@ -61,8 +75,7 @@ class BoardCell extends React.Component {
         }
         
         return(
-            <td className={"cell " + cellStateClass} onClick={this.handleClick} onContextMenu={this.handleClick}>
-                {xDiv}
+            <td className={"cell " + cellStateClass + " "+ xClass} onClick={this.handleClick} onContextMenu={this.handleClick}>
             </td>
         )
     }
