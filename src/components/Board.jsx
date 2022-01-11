@@ -4,18 +4,16 @@ import BoardCellRow from "./BoardCellRow";
 import BoardCell from "./BoardCell";
 import CellStatus from "../CellStatus";
 import BoardState from "../BoardState";
+import BoardGenerator from "../BoardGenerator";
 
 class Board extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {rows : this.props.rows, cols : this.props.cols, cellStatuses : [new BoardState(this.props.rows, this.props.cols)]}
-        // for (var i = 0; i < this.state.width; i++) { 
-        //     this.state.cellStatuses.push([])
-        //     for (var j = 0; j < this.state.height; j++) {
-        //         this.state.cellStatuses[i].push(CellStatus.BLANK);
-        //     }
-        // }
+        this.boardGen = new BoardGenerator();
+        // this.state = {rows : this.props.rows, cols : this.props.cols, cellStatuses : [new BoardState(this.props.rows, this.props.cols)]}
+        this.state = {rows : this.props.rows, cols : this.props.cols, cellStatuses : [this.boardGen.generateBoard(this.props.rows, this.props.cols)]}
+        
     }
 
     updateCellStatus = (row, col, status) => {
@@ -29,6 +27,7 @@ class Board extends React.Component {
     }
 
     render() {
+        console.log(this.state.cellStatuses[0])
         var vertical_keys = [];
         for (var i = 0; i < this.state.cols; i ++) {
             vertical_keys.push(<VerticalKeyCell></VerticalKeyCell>);
