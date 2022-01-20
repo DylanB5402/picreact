@@ -11,7 +11,6 @@ class Board extends React.Component {
     constructor(props) {
         super(props);
         this.boardGen = new BoardGenerator();
-        // this.state = {rows : this.props.rows, cols : this.props.cols, cellStatuses : [new BoardState(this.props.rows, this.props.cols)]}
         var actualBoardLayout = this.boardGen.generateBoard(this.props.rows, this.props.cols);
         this.state = {rows : this.props.rows, cols : this.props.cols, cellStatuses : [actualBoardLayout], renderedCellStatuses : [actualBoardLayout]}
         
@@ -28,7 +27,6 @@ class Board extends React.Component {
     }
 
     render() {
-        console.log(this.state.cellStatuses[0])
         var vertical_keys = [];
         for (var i = 0; i < this.state.cols; i ++) {
             vertical_keys.push(<VerticalKeyCell></VerticalKeyCell>);

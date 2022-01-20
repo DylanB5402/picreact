@@ -3,6 +3,8 @@ import CellStatus from './CellStatus';
 class BoardState {
   constructor (rows, cols) {
     this.state = [];
+    this.rows = rows;
+    this.cols = cols;
     for (let i = 0; i < rows; i++) {
       this.state.push([]);
       for (let j = 0; j < cols; j++) {

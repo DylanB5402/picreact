@@ -4,6 +4,7 @@
     width: auto;
     white-space: nowrap;
     max-width: auto;
+    max-height: auto;
     
 }
 
@@ -41,8 +42,11 @@
 }
 
 .cellWrong {
-    border-color: red;
-    /* border-width: 3px; */
+    outline-style: solid;
+    outline-color: red;
+    outline-width: 4px;
+    max-width: auto;
+    max-height: auto;
 }
 
 table {

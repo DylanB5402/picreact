@@ -26,6 +26,17 @@ class BoardGenerator {
         }
         return board;
     }
+
+    generateVerticalKey(boardState) {
+        var keys = []
+        for (var c = 0; c < boardState.cols; c++) {
+            keys.push([])
+            var lastCellFilled = false;
+            for (var r = 0; r < boardState.rows; r++) {
+                // if ()
+            }
+        }
+    }
 }
 
 export default BoardGenerator;
